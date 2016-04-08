@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2016 at 10:24 AM
+-- Generation Time: Apr 08, 2016 at 03:22 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.3
 
@@ -37,6 +37,14 @@ CREATE TABLE `booking` (
   `pesan_warning` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`id_booking`, `username_customer`, `username_driver`, `tanggal_waktu`, `keperluan`, `tujuan`, `status`, `pesan_warning`) VALUES
+(1, 'ilham', 'iwan', '2016-04-10 08:00:00', 'Meeting', 'Jakarta Selatan', 'On going', NULL),
+(2, 'zultan', 'iwan', '2016-04-10 10:00:00', 'Meeting', 'Jakarta Pusat', 'On going', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +56,17 @@ CREATE TABLE `customer` (
   `role` varchar(20) NOT NULL,
   `jabatan` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`username`, `role`, `jabatan`) VALUES
+('admin', 'admin', 'admin'),
+('ilatifah', 'customer', 'Finance'),
+('ilham', 'customer', 'HR'),
+('sandar', 'customer', 'Finance'),
+('zultan', 'customer', 'HR');
 
 -- --------------------------------------------------------
 
@@ -61,6 +80,13 @@ CREATE TABLE `driver` (
   `foto` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `driver`
+--
+
+INSERT INTO `driver` (`username`, `nomorpolisi`, `foto`) VALUES
+('iwan', 'B1234AU', '/abc/def');
+
 -- --------------------------------------------------------
 
 --
@@ -70,9 +96,17 @@ CREATE TABLE `driver` (
 CREATE TABLE `invoice` (
   `id` int(6) NOT NULL,
   `id_maintenance` int(6) NOT NULL,
-  `tanggal_waktu` datetime NOT NULL,
+  `tanggal_waktu` date NOT NULL,
   `foto` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`id`, `id_maintenance`, `tanggal_waktu`, `foto`) VALUES
+(1, 1, '2016-04-18', '/mmm/nn/'),
+(2, 2, '2016-04-19', '/klkl/nmnm');
 
 -- --------------------------------------------------------
 
@@ -84,6 +118,15 @@ CREATE TABLE `jadwal` (
   `username` varchar(10) NOT NULL,
   `jadwal` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `jadwal`
+--
+
+INSERT INTO `jadwal` (`username`, `jadwal`) VALUES
+('iwan', '2016-04-10 08:00:00'),
+('iwan', '2016-04-10 09:00:00'),
+('iwan', '2016-04-10 10:00:00');
 
 -- --------------------------------------------------------
 
@@ -99,6 +142,14 @@ CREATE TABLE `kendaraan` (
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `kendaraan`
+--
+
+INSERT INTO `kendaraan` (`nomorpolisi`, `nama`, `kapasitas`, `jarak`, `status`) VALUES
+('B123AU', 'Avanza', 5, 10000, 1),
+('B5678AA', 'Innova', 5, 12000, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -112,6 +163,14 @@ CREATE TABLE `maintenance` (
   `username_customer` varchar(10) NOT NULL,
   `jenis` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `maintenance`
+--
+
+INSERT INTO `maintenance` (`Id`, `tanggal_waktu`, `nomorpolisi`, `username_customer`, `jenis`) VALUES
+(1, '2016-04-15 11:00:00', 'B123AU', 'ilatifah', 'Rutin'),
+(2, '2016-04-16 16:00:00', 'B5678AA', 'sandar', 'Accidental');
 
 -- --------------------------------------------------------
 
@@ -145,7 +204,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Username`, `Password`, `Email`, `Nama`, `NoHP`) VALUES
-('admin', 'admin', 'admin@gmail.com', 'Budi', '081234567890');
+('admin', 'admin', 'admin@gmail.com', 'Budi', '081234567890'),
+('ilatifah', 'ilatifah', 'abcd@gmail.com', 'Ilatifah Nur', '0899999999'),
+('ilham', 'ilham', 'abc@abc.com', 'Ilham', '087777777777'),
+('iwan', 'iwan', 'jkl@jkl.com', 'Iwan ', '081111111111'),
+('sandar', 'sandar', 'def@def.com', 'Sandar', '08666666666'),
+('zultan', 'zultan', 'ghi@ghi.com', 'Zultan', '08555555555');
 
 --
 -- Indexes for dumped tables
@@ -213,12 +277,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id_booking` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_booking` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `maintenance`
 --
 ALTER TABLE `maintenance`
-  MODIFY `Id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
