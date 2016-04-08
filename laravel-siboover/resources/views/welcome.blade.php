@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome</title>
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="materialize/css/materialize.css" rel="stylesheet" type="text/css">
-        <link href="materialize/css/login.css" rel="stylesheet" type="text/css">
-        <link rel="icon" type="image/png" href="favicon.ico">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+        <title>Laravel</title>
 
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+
+        <style>
+            html, body {
+                height: 100%;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                display: table;
+                font-weight: 100;
+                font-family: 'Lato';
+            }
+
+            .container {
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .content {
+                text-align: center;
+                display: inline-block;
+            }
+
+            .title {
+                font-size: 96px;
+            }
+        </style>
+    </head>
     <body>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="materialize/js/materialize.js"></script>
         <div class="container">
-            <div class="row">
-                <div class="center-align">
-                    <img style="margin-top: 5%;" src="logo-fix.png" width="300" height="300">
-                </div>
-                <div class="row">
-                    <form class="col s4 offset-s4">
-                        <div class="row">
-                            <div class="input-field">
-                                <input id="username" type="text" class="validate">
-                                <label for="username">Username</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field">
-                                <input id="password" type="password" class="validate">
-                                <label for="password">Password</label>
-                            </div>
-                        </div>
-                        <div class="right-align">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Login</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="content">
+                <div class="title">Laravel 5</div>
             </div>
         </div>
     </body>
