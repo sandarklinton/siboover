@@ -41,8 +41,9 @@
                     <li class="center-align" style="height: 70px;"><img src="logo-header.png"></li>
                     <li><a href="#!">HOME</a></li>
                     <li><a href="#!">BOOKING</a></li>
-                    <li><a href="<?=URL::route('profileuser');?>">PROFILE</a></li>
+                    <li><a href="#!">PROFILE</a></li>
                     <li><a href="#!">HISTORY</a></li>
+                    <li><a href="<?=URL::route('managevehiclef');?>">MANAGE VEHICLE</a></li>
                 </ul>
             </nav>
         </header>

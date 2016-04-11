@@ -40,9 +40,9 @@
                 <ul id="staggered-list" class="side-nav fixed">
                     <li class="center-align" style="height: 70px;"><img src="logo-header.png"></li>
                     <li><a href="#!">HOME</a></li>
-                    <li><a href="#!">BOOKING</a></li>
-                    <li><a href="<?=URL::route('profileuser');?>">PROFILE</a></li>
-                    <li><a href="#!">HISTORY</a></li>
+                    <li><a href="<?=URL::route('trips');?>">TRIPS</a></li>
+                    <li><a href="#!">PROFILE</a></li>
+                    <li><a href="<?=URL::route('driver');?>">DRIVER</a></li>
                 </ul>
             </nav>
         </header>
