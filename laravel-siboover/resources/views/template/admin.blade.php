@@ -39,10 +39,13 @@
             <nav style="height: 1px; background-color:black;">
                 <ul id="staggered-list" class="side-nav fixed">
                     <li class="center-align" style="height: 70px;"><img src="logo-header.png"></li>
-                    <li><a href="#!">HOME</a></li>
-                    <li><a href="#!">BOOKING</a></li>
-                    <li><a href="<?=URL::route('profileuser');?>">PROFILE</a></li>
-                    <li><a href="#!">HISTORY</a></li>
+                    <li><a href="<?=URL::route('home');?>">HOME</a></li>
+                    <li><a href="<?=URL::route('booking');?>">BOOKING</a></li>
+                    <li><a href="<?=URL::route('profile');?>">PROFILE</a></li>
+                    <li><a href="<?=URL::route('history');?>">HISTORY</a></li>
+                    <li><a href="<?=URL::route('managebooking');?>">MANAGE BOOKING</a></li>
+                    <li><a href="<?=URL::route('manageasset');?>">MANAGE ASSET</a></li>
+                    <li><a href="<?=URL::route('manageaccount');?>">MANAGE USER ACCOUNT</a></li>
                 </ul>
             </nav>
         </header>
