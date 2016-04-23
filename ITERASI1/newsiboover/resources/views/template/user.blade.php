@@ -31,7 +31,7 @@
                 <nav>
                     <div class="nav-wrapper">
                         <ul class="right hide-on-med-and-down">
-                            <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo Session::get('username'); ?><i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">John Doe<i class="material-icons right">arrow_drop_down</i></a></li>
                         </ul>
                     </div>
                 </nav>
